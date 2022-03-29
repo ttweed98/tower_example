@@ -5,10 +5,11 @@
   connection: network_cli
 
   tasks:
-    - name: "NTP Config"
-      cisco.ios.ios_config: lines
-        - ntp server 99.99.99.99
+    - name: "NTP CONFIG"
+      cisco.ios.ios_config:
+        lines:
+          - ntp server 99.99.99.99
       register: my_output
 
     - debug:
-        msg: "{{ my_output}}"
+        msg: "{{ my_output }}"
