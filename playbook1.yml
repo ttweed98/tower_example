@@ -1,16 +1,14 @@
---- 
+---
 - name: "Tower Example Play"
   hosts: cisco_devices
   gather_facts: false
   connection: network_cli
 
-  tasks: 
+  tasks:
     - name: "NTP Config"
-      cisco.ios.ios_config:
-        lines
-          - ntp server: 99.99.99.99
+      cisco.ios.ios_config: lines
+        - ntp server 99.99.99.99
       register: my_output
 
     - debug:
         msg: "{{ my_output}}"
-        
